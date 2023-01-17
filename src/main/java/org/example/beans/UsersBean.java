@@ -7,6 +7,8 @@ package org.example.beans;
  */
 public class UsersBean {
     private int Id;
+    private String userName;
+    private String emailAddress;
 
     public int getId() {
         return Id;
@@ -32,6 +34,5 @@ public class UsersBean {
         this.emailAddress = emailAddress;
     }
 
-    private String userName;
-    private String emailAddress;
+
 }
