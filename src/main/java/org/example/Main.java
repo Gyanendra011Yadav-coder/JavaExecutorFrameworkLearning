@@ -29,7 +29,7 @@ public class Main {
 
         UserDao userDao = new UserDao();
         for (String user : usersList){
-            Future<Integer> futureObj=executor.submit(new UserProcessor(user,userDao));
+            Future<Integer> futureObj=executor.submit(new UserProcessor(user,userDao)); // Future is used to store the Output
             System.out.println("Result of the operation is: " + futureObj.get());
         }
         executor.shutdown();
