@@ -17,5 +17,11 @@ public class SchedulerForDeletingFile {
 
         System.out.println("Starting scheduler for cleaning of file.....");
         executorService.schedule(new CleaningFolderScheduler(),5, TimeUnit.SECONDS);
+
+        //Intial-Delay is the time after which process will start executing the task, period time is the time for which it will be waiting
+        executorService.scheduleAtFixedRate(new CleaningFolderScheduler(),5,4 ,TimeUnit.SECONDS);
+
+        //Delay time starts it coutn once initial Delay ends
+        executorService.scheduleWithFixedDelay(new CleaningFolderScheduler(),5,4 ,TimeUnit.SECONDS);
     }
 }
